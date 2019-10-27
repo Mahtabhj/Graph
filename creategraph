@@ -1,0 +1,41 @@
+#include<stdio.h>
+#define WHITE 0
+#define GREY 1
+#define BLACK 2
+
+int G[100][100];
+int color[100],d[100],prev[100],q[100];
+int front=0,rear=0;
+
+int main()
+{
+    int n,e,u,v,i,s;
+    printf("Enter number of nodes = \n");
+    scanf("%d",&n);
+    printf("Enter number of edges = \n");
+    scanf("%d",&e);
+    printf("Enter graph source = \n");
+    scanf("%d",&s);
+    for(i=0;i<n;i++)
+    {
+        for(int j=0;j<n;j++)
+        {
+            G[i][j]=0;
+        }
+    }
+    for(i=0;i<e;i++)
+    {
+        printf("Enter edges :");
+        scanf("%d %d",&u,&v);
+        G[u][v]=1;
+        G[v][u]=1;
+    }
+    for(i=0;i<n;i++)
+    {
+        for(int j=0;j<n;j++)
+        {
+            printf("%-4d",G[i][j]);
+        }
+        printf("\n");
+    }
+}
